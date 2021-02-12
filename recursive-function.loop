@@ -1,0 +1,37 @@
+# f(0) = 4
+# f(1) = 8
+# f(i) = ceil( f(i-1)^2 / 3 ) + floor((f(i-2)+1)/2)
+
+i := x1;
+a := 4;
+b := 8;
+x0 := a;
+
+three := 3;
+
+LOOP i DO
+    t := b * b;
+    LOOP three DO
+        rest := t MOD 3;
+        IF rest != 0 DO
+            t := t + 1;
+        END
+    END
+
+    first := t DIV 3;
+
+    t := a + 1;
+    rest := t MOD 2;
+    IF rest != 0 DO
+        rest := rest - 1;
+    END
+
+    second :=  t DIV 2;
+
+    c := first + second;
+
+    a := b;
+    b := c;
+
+    x0 := a;
+END

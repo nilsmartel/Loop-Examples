@@ -1,0 +1,21 @@
+# input (n=zahl)
+zahl := x1;
+found := 0;
+i := 0;
+LOOP x1 DO
+    IF zahl = 1 DO
+        found = 1;
+    END
+
+    IF found = 0 DO
+        i = i + 1;
+        b := zahl mod 2;
+        IF b != 0 DO
+            zahl := zahl + 1;
+        END
+
+        zahl := zahl div 2;
+    END
+END
+
+x0 := i;

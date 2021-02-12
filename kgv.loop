@@ -1,0 +1,18 @@
+# kleinstes gemeinsames Vielfaches
+# input x1=n1, x2=n2
+# output in x0
+
+max := n1*n2;
+var := max;
+LOOP max DO
+    b1 := var mod n1;
+    b0 := var mod n0;
+
+    IF b1 = 0 DO
+        IF b2 = 0 DO
+            x0 := var;
+        END
+    END
+
+    var := var - 1;
+END
